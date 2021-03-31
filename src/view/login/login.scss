@@ -1,0 +1,145 @@
+@import '../../style/variables';
+
+.login-background {
+    height: 100vh;
+    background-color: #f6f5f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .card-box {
+        width: 860px;
+        height: 500px;
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+            0 10px 10px rgba(0, 0, 0, 0.22);
+        overflow: hidden;
+
+        input {
+            padding: 12px 15px;
+            border: none;
+            width: 284px;
+            margin: 10px;
+            background-color: #eee;
+        }
+
+        .move-container {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            transition: all 0.6s ease-in-out;
+
+            .from-box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                height: 100%;
+
+                h1 {
+                    font-size: 2em;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .sign-up-container {
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .sign-in-container {
+            z-index: 2;
+        }
+
+        button {
+            width: 120px;
+            height: 40px;
+            border: 1px solid #1890ff;
+            border-radius: 20px;
+            color: white;
+            font-size: 15px;
+        }
+
+        .overlay-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            height: 100%;
+            width: 50%;
+            overflow: hidden;
+            transition: all 0.6s ease-in-out;
+            h1 {
+                font-size: 2rem;
+                color: white;
+            }
+
+            span {
+                color: white;
+                font-weight: 100;
+                margin: 20px 0 30px 0;
+            }
+
+            button {
+                color: white;
+                border: 1px solid white;
+                background: -webkit-linear-gradient(to right, #1890ff, #369eff);
+                background: linear-gradient(to right, #1890ff, #369eff);
+            }
+            .overlay{
+                height: 100%;
+                width: 200%;
+                position: relative;
+                left: -100%;
+                background: -webkit-linear-gradient(to right, #1890ff, #369eff);
+                background: linear-gradient(to right, #1890ff, #369eff);
+                
+                .left-box,
+                .right-box {
+                    position: absolute;
+                    top: 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    width: 50%;
+                    transition: all 0.6s ease-in-out;
+
+                }
+    
+                .right-box {
+                   
+                    left: 50%;
+                }
+            }
+           
+        }
+    }
+
+    .card-box.right-panel-active {
+        .sign-up-container {
+            transform: translateX(100%);
+            opacity: 1;
+            z-index: 5;
+        }
+
+        .sign-in-container {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        .overlay-container{
+            transform: translateX(-100%);
+        }
+        .left-box {
+            left: 50%;    
+        }
+
+        .right-box {
+           opacity: 0;
+        }
+    }
+
+}

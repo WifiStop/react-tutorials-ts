@@ -1,0 +1,54 @@
+@import '../../style/variables';
+
+.homePage-box{
+    height: 100%;
+    .card-box{
+        display: flex;
+     
+        .card{
+            margin: 0 10px;
+            min-width: calc((100% - 60px) / 4);
+
+            p{
+                font-size: 36px;
+                color: #666;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .data-details{
+                display: flex;
+                flex-wrap: nowrap;
+                span{
+                    flex:1
+                }
+            }
+        }
+        .card:first-child{
+            margin: 0 10px 0 0;
+        }
+        .card:last-child{
+            margin: 0 0 0 10px;
+        }
+    }
+  
+    .echarts-box{
+        margin-top: 20px;
+        .views-box{
+            display: flex;
+            .chart{
+                height: 330px;
+                min-width: 66.7%;
+            }
+            .progress{
+                min-width: 33.3%;
+
+            }
+        }
+    }
+    :global {
+        .ant-card-body{
+            padding: 15px;
+        }
+      }
+}
+
